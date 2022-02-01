@@ -1,20 +1,32 @@
+
 from django.db import models
+from django.contrib.auth.models import User
+
+class MyAppUser( models.Model ) :
+    def __unicode__( self ) :
+       return self.user.username
+    user    = models.ForeignKey( User, on_delete=models.CASCADE )
+    phone   = models.CharField( max_length = 135, blank = True )
 
 # Create your models here.
-class House(models.Model):
-    house_no = models.CharField(max_length=255, primary_key=True)
-    block = models.CharField(max_length=20)
-    rent = models.IntegerField()
-    size = models.CharField(max_length=255)
-    status = models.CharField(max_length=255)
+
 
 class Block(models.Model):
     block_no = models.CharField(max_length=255, primary_key=True)
     capacity = models.IntegerField()
 
+class House(models.Model):
+    house_no = models.CharField(max_length=255, primary_key=True)
+    block_no = models.ForeignKey( Block, on_delete=models.CASCADE )
+    rent = models.IntegerField()
+    size = models.CharField(max_length=255)
+    status = models.CharField(max_length=255)
+
+
 class Payment(models.Model):
     payment_id = models.IntegerField( primary_key=True, auto_created=True)
     amount = models.IntegerField()
+    house_no = models.ForeignKey(House, on_delete=models.CASCADE)
     date = models.IntegerField()
     month = models.CharField(max_length=255)
     year = models.CharField(max_length=4)
