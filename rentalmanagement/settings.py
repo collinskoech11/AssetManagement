@@ -129,6 +129,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+CRISPY_TEMPLATE_PACK="bootstrap4"
+
 LOGIN_URL = '/SignIn'
 
 LOGIN_REDIRECT_URL = '/Dashboard/Dashboard.html'
