@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -133,7 +134,7 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 
 LOGIN_URL = '/SignIn'
 
-LOGIN_REDIRECT_URL = '/Dashboard/Dashboard.html'
+LOGIN_REDIRECT_URL = '/Dashboard/index'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
