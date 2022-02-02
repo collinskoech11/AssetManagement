@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
     <section class="Header-container">
@@ -16,6 +18,26 @@
                 <h3>Supreme Rental Management</h3>
             </div>
         </div>
+    </section>
+    <section class="FormCon">
+        {% block content %}
+            
+            <div class="container" style="margin-top: 0; padding-top:220px;">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4" style="color: black;">Sign in Now</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group" id="signup-button">
+                        <button class="btn ">Sign in</button>
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted ml-3" >Dont have an account  <a href="/Register">Sign Up</a></small>
+                    </div>
+                </form>
+            </div>
+        {% endblock %}
     </section>
 </body>
 </html>

@@ -5,7 +5,10 @@ from django.contrib import messages
 
 # Create your views here.
 def SignIn(request):
-    return render(request, 'SignIn.html')
+    if request.user.is_authenticated:
+        return render(404)
+    else:
+        return render(request, 'SignIn.html')
     
 
 def index(request):
