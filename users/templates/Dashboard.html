@@ -8,12 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <style>
+        .dash-container{
+            display:flex;
+            padding:50px;
+            width:100%;
+            margin-top:70px;
+        }
+        .dash-container .card{
+            width:45%;
+            margin-right:5%;
+            height:400px;
+            text-align:center;
+            overflow-y: hidden;
+        }
+        .dash-container .card img{
+            height:auto;
+            width:auto;
+        }
+    </style>
 </head>
 <body>
     <section class="Header-container">
         <div class="header-container">
             <div class="header-section">
                 <h3>Supreme Rental Management</h3>
+            </div>
+        </div>
+    </section>
+    <section class="Dash-Con">
+        <div class="dash-container">
+            <div class="card">
+                <img src="https://cdn1.iconfinder.com/data/icons/seo-and-development-hexagon/128/12-512.png" alt="">
+            </div>
+            <div class="card">
+                <h2>Username : Sample</h2>
+                <h3>House :</h3>
+                <h3>Block :</h3>
+                <h3>Payment Status :</h3>
             </div>
         </div>
     </section>
