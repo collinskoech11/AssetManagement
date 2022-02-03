@@ -5,6 +5,8 @@
 }
 body{
     font-family:sans-serif;
+    max-width:100vw;
+    overflow-x:hidden;
 }
 section{
     width:100vw;
@@ -15,9 +17,9 @@ section{
     width:100%;
     height:70px;
     display:flex;
-    background-color: rgb(123,255,51);
+    background-color: rgb(123,255,51,0.4);
     position:fixed;
-    color:#fff;
+    color:#000;
 }
 .header-container .header-section{
     padding-top:25px;
@@ -60,4 +62,61 @@ section{
     .form-contain form{
         padding:0;
     }
+}
+*{
+    color:rgb(6, 41, 103);
+}
+button{
+    width:185px;
+    height:50px;
+    border:4px solid rgb(15, 51, 114,0.7);
+    border-radius: 5px;
+    text-align: center;
+    background-color: transparent;
+    font-weight:bold;
+    margin-bottom:15px;
+    cursor:pointer;
+}
+.dash-container{
+    display:flex;
+    padding:50px;
+    width:100%;
+    margin-top:70px;
+    overflow-y:hidden;
+}
+.dash-container .ovv *{
+    text-align:left;
+    padding-left:50px;
+    align-items: left;
+}
+
+.dash-container .card{
+    width:45%;
+    margin-right:5%;
+    height:auto;
+    text-align:center;
+    overflow-y: hidden;
+    background-color: rgb(123,255,51,0.4);
+    border-radius:10px;
+}
+.dash-container .card img{
+    height:150px;
+    width:150px;
+}
+.dash-container .card *{
+    margin-top: 8px;
+}
+.table-container{
+    background-color:rgb(123,255,51,0.4);
+    padding:50px;
+
+}
+table{
+    width:100%;
+}
+table th,td{
+    border:3px solid rgba(38, 75, 138, 0.4);
+    text-align:center;
+    height:50px;
+    border-bottom:none;
 }

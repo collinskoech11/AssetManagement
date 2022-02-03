@@ -8,28 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static './css/style.css' %}">
-    <style>
-        .dash-container{
-            display:flex;
-            padding:50px;
-            width:100%;
-            margin-top:70px;
-            overflow-y:hidden;
-        }
-        .dash-container .card{
-            width:45%;
-            margin-right:5%;
-            height:400px;
-            text-align:center;
-            overflow-y: hidden;
-        }
-        .dash-container .card img{
-            height:auto;
-            width:auto;
-        }
-    </style>
+    
 </head>
 <body>
+    
     <section class="Header-container">
         <div class="header-container">
             <div class="header-section">
@@ -42,13 +24,137 @@
             <div class="card">
                 <img src="https://cdn1.iconfinder.com/data/icons/seo-and-development-hexagon/128/12-512.png" alt="">
             </div>
-            <div class="card">
-                <h2>Username : Sample</h2>
-                <h3>House :</h3>
-                <h3>Block :</h3>
-                <h3>Payment Status :</h3>
+            <div class="card ovv">
+                <h2>Name : Sample</h2>
+                <h3>House : G3</h3>
+                <h3>Block : G</h3>
+                <h3>Payment Status : Paid</h3>
+                <a href=""><button>Make Payment</button></a>
             </div>
         </div>
     </section>
+    <section class="Dash-Con">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th class="dissapear">Date</th>
+                    <th>Month</th>
+                    <th>Year</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td class="dissapear">2</td>
+                    <td>February</td>
+                    <td>2022</td>
+                    <td>14,300</td>
+                </tr>
+                <tr>
+                    <td class="dissapear">2</td>
+                    <td>February</td>
+                    <td>2022</td>
+                    <td>14,300</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <style> 
+        body{
+            font-family:sans-serif;
+            max-width:100vw;
+            overflow-x:hidden;
+        }
+        section{
+            width:100vw;
+            max-width:100vw;
+            overflow-x: hidden;
+        }
+        *{
+            color:rgb(6, 41, 103);
+            max-width:100vw;
+        }
+        button{
+            width:185px;
+            height:50px;
+            border:4px solid rgb(15, 51, 114,0.7);
+            border-radius: 5px;
+            text-align: center;
+            background-color: transparent;
+            font-weight:bold;
+            margin-bottom:15px;
+            cursor:pointer;
+            transition: 0.5s linear;
+        }
+        button:hover{
+            background-color:rgb(15, 51, 114);
+            color:orange;
+            transition: 0.25s linear;
+        }
+        .header-container{
+            width:100%;
+            height:70px;
+            display:flex;
+            background-color: rgb(123,255,51,0.4);
+            position:fixed;
+            color:#000;
+        }
+        .dash-container{
+            display:flex;
+            padding:50px;
+            width:100%;
+            margin-top:70px;
+            overflow-y:hidden;
+            height:auto;
+        }
+        .dash-container .ovv *{
+            text-align:left;
+            padding-left:50px;
+            align-items: left;
+        }
+        
+        .dash-container .card{
+            width:45%;
+            margin-right:5%;
+            height:auto;
+            text-align:center;
+            overflow-y: hidden;
+            background-color: rgb(123,255,51,0.4);
+            border-radius:10px;
+            padding-top:20px;
+        }
+        @media screen and (max-width:1000px){
+            .dash-container{
+                display:block;
+            }
+            .dash-container .card{
+                width:100%;
+                margin-bottom:20px;
+            }
+            .dissapear{
+                display:none;
+            }
+        }
+        .dash-container .card img{
+            height:150px;
+            width:150px;
+        }
+        .dash-container .card *{
+            margin-top: 8px;
+        }
+        .table-container{
+            background-color:rgb(123,255,51,0.4);
+            padding:50px;
+
+        }
+        table{
+            width:100%;
+        }
+        table th,td{
+            border:3px solid rgba(38, 75, 138, 0.4);
+            text-align:center;
+            height:50px;
+            border-bottom:none;
+        }
+    </style>
 </body>
+
 </html>
