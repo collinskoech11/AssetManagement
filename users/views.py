@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from . forms import UserRegisterForm
 from django.contrib import messages
+from .models import *
 
 # Create your views here.
 def SignIn(request):
@@ -15,7 +16,10 @@ def index(request):
     return render(request, 'index.html')
 
 def Dashboard(request):
-    return render(request, 'Dashboard.html')
+    payment_objects = Payment.objects.all()
+    return render(request, 'Dashboard.html',
+        {'payment_objects':payment_objects}
+    )
 
 def logout(request):
     return render(request, 'logout.html')

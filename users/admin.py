@@ -6,7 +6,7 @@ from .models import *
 
 # Register your models here.
 class MyAppUserAdmin(admin.ModelAdmin):
-    list_display = ('phone','phone')
+    list_display = ('user','house_no','national_id')
 
 class HouseAdmin(admin.ModelAdmin):
     list_display = ('house_no','rent','status','size','block_no')
