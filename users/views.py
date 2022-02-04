@@ -4,6 +4,7 @@ from . forms import UserRegisterForm
 from django.contrib import messages
 from .models import *
 
+
 # Create your views here.
 def SignIn(request):
     if request.user.is_authenticated:
@@ -16,7 +17,8 @@ def index(request):
     return render(request, 'index.html')
 
 def Dashboard(request):
-    payment_objects = Payment.objects.all()
+    current_user = request.user
+    payment_objects = Payment.objects.filter(username=current_user)
     return render(request, 'Dashboard.html',
         {'payment_objects':payment_objects}
     )
