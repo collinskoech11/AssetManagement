@@ -15,7 +15,7 @@
     <section class="Header-container">
         <div class="header-container">
             <div class="header-section">
-                <h3>Supreme Rental Management</h3>
+                <h3>Supreme</h3>
             </div>
         </div>
     </section>
@@ -26,8 +26,10 @@
             </div>
             <div class="card ovv">
                 <h2>Name : {{user.username}}</h2>
-                <h3>House :{{user.house_no}}</h3>
-                <h3>Block : G</h3>
+                {% for sample in house_objects%}
+                    <h3>House : {{sample.house_no}} </h3>
+                    <h3>Block : {{sample.block_no}}</h3>
+                {% endfor %}
                 <h3>Payment Status : Paid</h3>
                 <a href=""><button>Make Payment</button></a>
             </div>
@@ -36,6 +38,7 @@
     <section class="Dash-Con">
         <div class="table-container">
             <table>
+                <h3 style="text-align:center; margin-bottom:20px;">My Payment history</h3>
                 <tr>
                     <th class="dissapear">Date</th>
                     <th>Month</th>
@@ -51,6 +54,11 @@
                 </tr>
                 {% endfor %}
             </table>
+        </div>
+    </section>
+    <section class="log">
+        <div class="log-container">
+            <button>Log Out</button>
         </div>
     </section>
     <style> 
@@ -75,7 +83,7 @@
             border:4px solid rgb(123,255,51);
             border-radius: 5px;
             text-align: center;
-            background-color: transparent;
+            background-color: rgba(97, 96, 113, 0.7);
             font-weight:bold;
             margin-bottom:15px;
             cursor:pointer;
@@ -85,6 +93,10 @@
             background-color:rgb(15, 51, 114);
             color:orange;
             transition: 0.25s linear;
+        }
+        .log-container{
+            margin-top:10px;
+            margin-left:50px;
         }
         .header-container{
             width:100%;

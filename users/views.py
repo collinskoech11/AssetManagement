@@ -19,8 +19,10 @@ def index(request):
 def Dashboard(request):
     current_user = request.user
     payment_objects = Payment.objects.filter(username=current_user)
+    house_objects = MyAppUser.objects.all()
     return render(request, 'Dashboard.html',
-        {'payment_objects':payment_objects}
+        {'payment_objects':payment_objects,'house_objects':house_objects},
+        # {'house_objects':house_objects}
     )
 
 def logout(request):
