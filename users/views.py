@@ -4,6 +4,7 @@ from . forms import UserRegisterForm
 from django.contrib import messages
 from .models import *
 from django.contrib.auth.decorators import login_required
+from datetime import datetime 
 
 
 # Create your views here.
@@ -18,7 +19,9 @@ def index(request):
     return render(request, 'index.html')
 
 @login_required
-def Dashboard(request):
+def Dashboard(request, datetime):
+    currentMonth = datetime.now().month
+    curentYear = datetime.now().year
     current_user = request.user
     payment_objects = Payment.objects.filter(username=current_user)
     house_objects = MyAppUser.objects.all()
@@ -26,7 +29,7 @@ def Dashboard(request):
         {'payment_objects':payment_objects,'house_objects':house_objects},
         # {'house_objects':house_objects}
     )
-    
+
 @login_required
 def ConfirmPayment(request):
     return render(request, 'Payment.html')
