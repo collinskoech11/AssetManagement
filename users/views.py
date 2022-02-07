@@ -5,6 +5,7 @@ from django.contrib import messages
 from .models import *
 from django.contrib.auth.decorators import login_required
 from datetime import datetime 
+import calendar
 
 
 # Create your views here.
@@ -22,9 +23,10 @@ def index(request):
 def Dashboard(request):
     currentMonth = datetime.now().month
     currentYear = datetime.now().year
+    curr_month = calendar.month_name[currentMonth]
     current_user = request.user
     payment_objects = Payment.objects.filter(username=current_user)
-    status_objects = Payment.objects.filter(username=current_user, month='February' )
+    status_objects = Payment.objects.filter(username=current_user, month=curr_month, year=currentYear )
     house_objects = MyAppUser.objects.all()
     return render(request, 'Dashboard.html',
         {'payment_objects':payment_objects,'house_objects':house_objects, 'status_objects':status_objects}
