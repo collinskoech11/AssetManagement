@@ -31,7 +31,11 @@
                     <h3>Block : {{sample.block_no}}</h3>
                 {% endfor %}
                 <h3>Payment Status : 
-                    
+                    {% if status_objects %}
+                        Paid
+                    {% else %}
+                        Not Paid
+                    {% endif %}
                 </h3>
                 <a href=""><button>Make Payment</button></a>
             </div>
