@@ -19,14 +19,14 @@ def index(request):
     return render(request, 'index.html')
 
 @login_required
-def Dashboard(request, datetime):
-    currentMonth = datetime.now().month
-    curentYear = datetime.now().year
+def Dashboard(request):
+    # currentMonth = datetime.now().month
+    # currentYear = datetime.now().year
     current_user = request.user
     payment_objects = Payment.objects.filter(username=current_user)
     house_objects = MyAppUser.objects.all()
     return render(request, 'Dashboard.html',
-        {'payment_objects':payment_objects,'house_objects':house_objects},
+        {'payment_objects':payment_objects,'house_objects':house_objects}
         # {'house_objects':house_objects}
     )
 
