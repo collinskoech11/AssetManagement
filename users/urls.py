@@ -26,5 +26,4 @@ urlpatterns = [
     path('logout', views.logout),
     path('SignIn',auth_view.LoginView.as_view(template_name='SignIn.html')),
     path('Dashboard/index', views.Dashboard),
-
 ]

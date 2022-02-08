@@ -32,7 +32,20 @@ def Dashboard(request):
         {'payment_objects':payment_objects,'house_objects':house_objects, 'status_objects':status_objects}
         # {'house_objects':house_objects}
     )
+@login_required
+def PaidHouses(request):
+    currentMonth = datetime.now().month
+    currentYear = datetime.now().year
+    curr_month = calendar.month_name[currentMonth]
+    paid_objects = Payment.objects.filter(month=curr_month, year=currentYear)
+    return render(request, 'PaidHouses.html', {'paid_objects':paid_objects})
 
+
+@login_required
+def UnpaidHouses(request):
+    return render(request, 'UnpaidHouses.html')
+
+    
 @login_required
 def ConfirmPayment(request):
     return render(request, 'Payment.html')
@@ -53,8 +66,3 @@ def Register(request):
     return render(request, 'Register.html', {'form':form})
 
 
-def PaidHouses(request):
-    return render(request, 'PaidHouses.html')
-
-def UnpaidHouses(request):
-    return render(request, 'UnpaidHouses.html')
