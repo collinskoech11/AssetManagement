@@ -38,14 +38,20 @@ def PaidHouses(request):
     currentYear = datetime.now().year
     curr_month = calendar.month_name[currentMonth]
     paid_objects = Payment.objects.filter(month=curr_month, year=currentYear)
-    return render(request, 'PaidHouses.html', {'paid_objects':paid_objects})
+    if request.user.is_superuser:
+        return render(request, 'PaidHouses.html', {'paid_objects':paid_objects})
+    else:
+        return render(404)
 
 
 @login_required
 def UnpaidHouses(request):
-    return render(request, 'UnpaidHouses.html')
+    if request.user.is_superuser:
+        return render(request, 'UnpaidHouses.html')
+    else:
+        return render(404)
 
-    
+
 @login_required
 def ConfirmPayment(request):
     return render(request, 'Payment.html')
