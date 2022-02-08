@@ -127,6 +127,8 @@ button:hover{
 }
 @media screen and (max-width:1000px){
     .dash-container{
+
+        padding:20px;
         display:block;
     }
     .dash-container .card{
