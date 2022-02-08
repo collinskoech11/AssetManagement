@@ -51,3 +51,10 @@ def Register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'Register.html', {'form':form})
+
+
+def PaidHouses(request):
+    return render(request, 'PaidHouses.html')
+
+def UnpaidHouses(request):
+    return render(request, 'UnpaidHouses.html')
