@@ -160,3 +160,69 @@ table th,td{
     height:50px;
     border-bottom:none;
 }
+/** Form Container 
+#3333333333####################################################################################
+*/
+.index-container{
+    display:flex;
+    width:100%;
+    padding:80px;
+    margin-top:70px;
+}
+.index-container .index-sub{
+    width:45%;
+    border:1px solid rgb(140, 192, 112,0.4);
+    height:500px;
+    margin-left:5%;
+    padding:40px;
+    border-radius:20px;
+}
+
+.index-container .index-sub img{
+    width:100%;
+    height:100%;
+}
+.index-container .index-sub h1{
+    font-size:3.5em;
+    color:#fff;
+}
+@media screen and (max-width:1000px){
+    .index-container{
+        display:block;
+        padding:30px;
+    }
+    .index-container .index-sub{
+        width:95%;
+        height:auto;
+        padding:20px;
+        margin-bottom:20px;
+    }
+    .index-container .index-sub h1{
+        font-size: 1.5em;
+    }
+}
+.index-container .index-sub h3{
+    color:rgb(140, 192, 112);
+    padding-top:50px;
+    
+}
+.btn-con{
+    width:100%;
+    display:flex;
+    margin-top:20px;
+}
+.btn-con *{
+    margin-right:5%;
+}
+.btn-con input{
+    width:60%;
+    height:50px;
+    background-color: transparent;
+    border:2px solid rgb(140, 192, 112);
+    border-radius:10px;
+}
+.btn-con button{
+    width:30%;
+    border-radius:10px;
+    border:1px;
+}

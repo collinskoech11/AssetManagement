@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +20,10 @@
     <section class="Dash-Con">
         <div class="table-container">
             <table>
-                <h3 style="text-align:center; margin-bottom:20px;">My Payment history</h3>
+                <h3 style="text-align:center; margin-bottom:20px; margin-top:70px;">Apartments paid {% block content %}
+                    {{ curr_month = calendar.month_name[currentMonth] }} 
+                    {% endblock %}
+                    </h3>
                 <tr>
                     <th class="dissapear">Date</th>
                     <th>Month</th>
