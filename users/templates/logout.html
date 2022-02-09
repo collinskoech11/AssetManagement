@@ -17,6 +17,15 @@
             </div>
         </div>
     </section>
+    <section class="FormCon">
+        {% block content %}
+            
+        <div class="container" style="margin-top:0; padding-top:100px;">
+            <h1 style="color:black">You have been logged out</h1>
+            <h5><a href="/SignIn">Log in again</a></h5>
+        </div>
+        {% endblock %}
+    </section>
     <style> 
         *{
             margin:0;

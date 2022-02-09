@@ -8,6 +8,7 @@ from datetime import datetime
 import calendar
 
 
+
 # Create your views here.
 def SignIn(request):
     if request.user.is_authenticated:
@@ -21,20 +22,22 @@ def index(request):
 
 @login_required
 def Dashboard(request):
+    current_user = request.user
     currentMonth = datetime.now().month
     currentYear = datetime.now().year
     curr_month = calendar.month_name[currentMonth]
-    current_user = request.user
     payment_objects = Payment.objects.filter(username=current_user)
     status_objects = Payment.objects.filter(username=current_user, month=curr_month, year=currentYear )
-    house_objects = MyAppUser.objects.all()
+    house_objects = MyAppUser.objects.filter(user=current_user)
     return render(request, 'Dashboard.html',
         {'payment_objects':payment_objects,'house_objects':house_objects, 'status_objects':status_objects}
-        # {'house_objects':house_objects}
     )
 @login_required
 def PaidHouses(request):
-    paid_objects = Payment.objects.all()
+    currentMonth = datetime.now().month
+    currentYear = datetime.now().year
+    curr_month = calendar.month_name[currentMonth]
+    paid_objects = Payment.objects.filter(month=curr_month, year=currentYear)
     if request.user.is_superuser:
         return render(request, 'PaidHouses.html', {'paid_objects':paid_objects})
     else:

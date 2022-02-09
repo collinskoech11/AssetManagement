@@ -23,7 +23,7 @@ urlpatterns = [
     path('Payment', views.ConfirmPayment),
     path('PaidHouses', views.PaidHouses),
     path('UnpaidHouses', views.UnpaidHouses),
-    path('logout', views.logout),
+    path('logout/', auth_view.LogoutView.as_view(template_name='logout.html')),
     path('SignIn',auth_view.LoginView.as_view(template_name='SignIn.html')),
     path('Dashboard/index', views.Dashboard),
 ]
