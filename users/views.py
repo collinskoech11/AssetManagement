@@ -34,10 +34,7 @@ def Dashboard(request):
     )
 @login_required
 def PaidHouses(request):
-    currentMonth = datetime.now().month
-    currentYear = datetime.now().year
-    curr_month = calendar.month_name[currentMonth]
-    paid_objects = Payment.objects.filter(month=curr_month, year=currentYear)
+    paid_objects = Payment.objects.all()
     if request.user.is_superuser:
         return render(request, 'PaidHouses.html', {'paid_objects':paid_objects})
     else:
