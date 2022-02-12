@@ -25,12 +25,12 @@
                 <img src="https://cdn1.iconfinder.com/data/icons/seo-and-development-hexagon/128/12-512.png" alt="">
             </div>
             <div class="card ovv">
-                <h2>Name : {{user.username}}</h2>
+                <h2><span style="color:aliceblue"> Name :</span> {{user.username}}</h2>
                 {% for sample in house_objects%}
-                    <h3>House : {{sample.house_no}} </h3>
-                    <h3>Block : {{sample.block_no}}</h3>
+                    <h3><span style="color:aliceblue">House :</span> {{sample.house_no}} </h3>
+                    <h3><span style="color:aliceblue">Block :</span> {{sample.block_no}}</h3>
                 {% endfor %}
-                <h3>Payment Status : 
+                <h3><span style="color:aliceblue">Payment Status :</span>
                     {% if status_objects %}
                         Paid
                     {% else %}
