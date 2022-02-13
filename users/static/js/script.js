@@ -6,7 +6,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: frameworks,
         datasets : [{
-            label: 'Popular Javascript Frameworks ',
+            label: 'Monthly Payment total',
             data: stars,
             backgroundColor: "#01030D",
             borderColor: "#fff"

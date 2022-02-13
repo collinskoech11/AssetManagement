@@ -6,7 +6,7 @@ class MyAppUser( models.Model ) :
     def __unicode__( self ) :
        return self.user.username
     user    = models.ForeignKey( User, on_delete=models.CASCADE )
-    house_no = models.CharField(max_length=255, null=True)
+    house_no = models.CharField(max_length=255, null=True, unique=True)
     block_no = models.CharField(max_length=255, null=True)
     national_id  = models.IntegerField(null=True)
 
