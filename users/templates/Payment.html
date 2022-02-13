@@ -19,6 +19,7 @@
     
         <div class="form-contain">
             <form method="POST">
+                <h2>Enter Payment details</h2>
                 {% csrf_token %}
                 <input type="number" name="amount" id="amount" placeholder="Amount" required style="color:#fff;">
                 <input type="number" name="date" id="date" placeholder="Date" required>

@@ -65,32 +65,40 @@ button:hover{
     padding:50px;
 }
 .form-contain form{
-    width:100%;
-    padding:20px;
+    width:40%;
+    padding:100px;
+    border-radius: 10px;
+    margin:auto;
+    background: #01030D;
 }
 .form-contain form input{
     width:100%;
     height:50px;
-    margin-bottom:20px;
+    border:none;
+    margin-bottom:25px;
     border-radius:5px;
-    border:2px solid #fff;
     padding-left:5px;
-    background-color:rgb(0,0,0,0.2);
+    background-color:#242529;
     color:#fff;
+}
+.form-contain form h2{
+    margin-bottom: 20px;
 }
 .form-contain form .submit{
     width:100px;
     color:#fff;
     font-weight:bold;
-    background: #272727;
+    background: #01030D;
     cursor:pointer;
+    border: 1px solid #fff;
 }
 @media screen and (max-width:1000px){
     .form-contain{
         padding:30px;
     }
     .form-contain form{
-        padding:0;
+        padding:20px;
+        width:100%;
     }
 }
 /** Dashboard Styling Container 
