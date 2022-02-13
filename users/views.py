@@ -44,8 +44,12 @@ def PaidHouses(request):
         return render(404)
 
 def Revenue(request):
-    return render(request, 'MonthlyRevenue.html')
-    
+    if request.user.is_superuser:
+        return render(request, 'MonthlyRevenue.html')
+    else:
+        return render(404)
+
+
 @login_required
 def UnpaidHouses(request):
     if request.user.is_superuser:
