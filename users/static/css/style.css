@@ -2,15 +2,14 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    color:rgb(123,255,51);
+    color:#fff;
     max-width:100vw;
 }
 body{
     font-family:sans-serif;
     max-width:100vw;
     overflow-x:hidden;
-    background: rgb(46,6,71);
-    background: radial-gradient(circle, rgba(46,6,71,1) 0%, rgba(8,40,73,1) 50%, rgba(0,0,0,1) 100%);
+    background-color: #242529;
 }
 section{
     width:100vw;
@@ -20,11 +19,10 @@ section{
 button{
     width:185px;
     height:50px;
-    border:2px solid rgb(123,255,51);
+    border:1px solid #fff;
     border-radius: 5px;
     text-align: center;
-    background: rgb(19,85,152);
-    background: radial-gradient(circle, rgba(19,85,152,1) 50%, rgba(71,85,191,1) 100%);
+    background: #01030D;
     font-weight:bold;
     margin-bottom:15px;
     cursor:pointer;
@@ -43,10 +41,10 @@ button:hover{
     width:100%;
     height:70px;
     display:flex;
-    background: rgb(3,2,25);
-    background: linear-gradient(90deg, rgba(3,2,25,1) 0%, rgba(25,5,38,1) 35%, rgba(4,39,47,1) 100%);
+    background: #01030D;
+    border-bottom: 1px solid #fff;
     position:fixed;
-    color:rgb(123,255,51);
+    color:#fff;
 }
 .header-container .header-section{
     padding-top:25px;
@@ -75,7 +73,7 @@ button:hover{
     height:50px;
     margin-bottom:20px;
     border-radius:5px;
-    border:3px solid rgb(123,255,51);
+    border:2px solid #fff;
     padding-left:5px;
     background-color:rgb(0,0,0,0.2);
     color:#fff;
@@ -84,7 +82,7 @@ button:hover{
     width:100px;
     color:#fff;
     font-weight:bold;
-    background-color:rgb(123,255,51);
+    background: #272727;
     cursor:pointer;
 }
 @media screen and (max-width:1000px){
@@ -122,8 +120,8 @@ button:hover{
     height:auto;
     text-align:center;
     overflow-y: hidden;
-    background: rgb(3,2,25);
-    background: linear-gradient(90deg, rgba(3,2,25,1) 0%, rgba(25,5,38,1) 35%, rgba(4,39,47,1) 100%);
+    border:1px solid #fff;
+    background: #01030D;
     border-radius:10px;
     padding-top:20px;
 }
@@ -149,8 +147,7 @@ button:hover{
     margin-top: 8px;
 }
 .table-container{
-    background: rgb(3,2,25);
-    background: linear-gradient(90deg, rgba(3,2,25,1) 0%, rgba(25,5,38,1) 35%, rgba(4,39,47,1) 100%);
+    background: #01030D;
     padding:50px;
 
 }
@@ -158,7 +155,7 @@ table{
     width:100%;
 }
 table th,td{
-    border:3px solid rgb(123,255,51,0.4);
+    border:1px solid #fff;
     text-align:center;
     height:50px;
     border-bottom:none;
@@ -174,7 +171,7 @@ table th,td{
 }
 .index-container .index-sub{
     width:45%;
-    border:1px solid rgb(123,255,51);
+    border:1px solid #fff;
     height:500px;
     margin-left:5%;
     padding:40px;
@@ -205,7 +202,7 @@ table th,td{
     }
 }
 .index-container .index-sub h3{
-    color:rgb(140, 192, 112);
+    color: #fff;
     padding-top:50px;
     
 }
@@ -221,11 +218,11 @@ table th,td{
     width:60%;
     height:50px;
     background-color: transparent;
-    border:2px solid rgb(140, 192, 112);
+    border:1px solid #fff;
     border-radius:10px;
 }
 .btn-con button{
     width:30%;
     border-radius:10px;
-    border:1px;
+    border:1px solid #fff;
 }
