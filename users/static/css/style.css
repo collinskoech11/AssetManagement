@@ -20,15 +20,16 @@ section{
 button{
     width:185px;
     height:50px;
-    border:4px solid rgb(123,255,51);
+    border:2px solid rgb(123,255,51);
     border-radius: 5px;
     text-align: center;
-    background: rgb(46,6,71);
-    background: radial-gradient(circle, rgba(46,6,71,1) 0%, rgba(8,40,73,1) 50%, rgba(0,0,0,1) 100%);
+    background: rgb(19,85,152);
+    background: radial-gradient(circle, rgba(19,85,152,1) 50%, rgba(71,85,191,1) 100%);
     font-weight:bold;
     margin-bottom:15px;
     cursor:pointer;
     transition: 0.5s linear;
+    color:#fff;
 }
 button:hover{
     background-color:rgb(15, 51, 114);
@@ -93,9 +94,6 @@ button:hover{
     .form-contain form{
         padding:0;
     }
-}
-*{
-    color:rgb(6, 41, 103);
 }
 /** Dashboard Styling Container 
 #3333333333####################################################################################
@@ -176,7 +174,7 @@ table th,td{
 }
 .index-container .index-sub{
     width:45%;
-    border:1px solid rgb(140, 192, 112,0.4);
+    border:1px solid rgb(123,255,51);
     height:500px;
     margin-left:5%;
     padding:40px;

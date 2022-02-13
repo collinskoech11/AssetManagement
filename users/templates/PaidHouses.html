@@ -20,19 +20,19 @@
     <section class="Dash-Con">
         <div class="table-container" style="margin-top:100px;">
             <table>
-                <h3 style="text-align:center; margin-bottom:20px; ">Apartments paid  </h3>
+                <h3 style="text-align:center; margin-bottom:20px; ">Apartments paid this Month </h3>
                 <tr>
                     <th class="dissapear">Date</th>
-                    <th>Month</th>
+                    <th>amount</th>
+                    <th>username</th>
                     <th>Year</th>
-                    <th>Amount</th>
                 </tr>
                 {% for paid in paid_objects %}
                 <tr>
                     <td class="dissapear">{{ paid.date}}</td>
-                    <td>{{paid.month}}</td>
-                    <td>{{paid.year}}</td>
                     <td>{{paid.amount}}</td>
+                    <td>{{paid.username}}</td>
+                    <td>{{paid.year}}</td>
                 </tr>
                 {% endfor %}
             </table>
