@@ -6,8 +6,9 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from datetime import datetime 
 import calendar
+from django.db.models import Sum
 
-
+months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
 # Create your views here.
 def SignIn(request):
@@ -44,8 +45,9 @@ def PaidHouses(request):
         return render(404)
 
 def Revenue(request):
+    
     if request.user.is_superuser:
-        return render(request, 'MonthlyRevenue.html')
+        return render(request, 'MonthlyRevenue.html', {'total':total})
     else:
         return render(404)
 
