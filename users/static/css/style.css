@@ -180,7 +180,7 @@ table th,td{
 .index-container .index-sub{
     width:45%;
     border:1px solid #fff;
-    height:500px;
+    height:60vh;
     margin-left:5%;
     padding:40px;
     border-radius:20px;
@@ -193,6 +193,11 @@ table th,td{
 .index-container .index-sub h1{
     font-size:3.5em;
     color:#fff;
+}
+@media screen and (max-height:800px){
+    .index-container .index-sub h1{
+        font-size: 2em;
+    } 
 }
 @media screen and (max-width:1000px){
     .index-container{
