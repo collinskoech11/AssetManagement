@@ -47,9 +47,8 @@ def PaidHouses(request):
 def Revenue(request):
     
     if request.user.is_superuser:
-        return render(request, 'MonthlyRevenue.html', {'total':total})
-    else:
-        return render(404)
+        return render(request, 'MonthlyRevenue.html')
+    
 
 
 @login_required
