@@ -36,3 +36,10 @@ class Payment(models.Model):
     year = models.CharField(max_length=4)
     username = models.CharField(max_length=255)
     national_id = models.IntegerField()
+
+class Sale(models.Model):
+    item = models.CharField(max_length=100)
+    price = models.FloatField()
+ 
+    def __str__(self):
+        return str(self.item)
