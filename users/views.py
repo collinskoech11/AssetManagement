@@ -6,7 +6,7 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from datetime import datetime 
 import calendar
-from django.db.models import Sum
+from .utils import get_plot
 
 months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
@@ -48,7 +48,12 @@ def Revenue(request):
     if request.user.is_superuser:
         return render(request, 'MonthlyRevenue.html')
     
-
+def sale(request):
+    qs = Sale.objects.all()
+    x = [x.item for x in qs]
+    y = [y.price for y in qs]
+    chart = get_plot(x,y)
+    return render(request, 'sale.html',{'chart': chart})
 
 @login_required
 def UnpaidHouses(request):
