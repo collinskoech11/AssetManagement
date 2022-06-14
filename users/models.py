@@ -22,6 +22,7 @@ class Block(models.Model):
 class House(models.Model):
     house_no = models.CharField(max_length=255, primary_key=True)
     block_no = models.ForeignKey( Block, on_delete=models.CASCADE )
+    occuppied = models.BooleanField(default=False)
     rent = models.IntegerField()
     size = models.CharField(max_length=255)
     status = models.CharField(max_length=255)

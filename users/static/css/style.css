@@ -42,7 +42,6 @@ button:hover{
     height:70px;
     display:flex;
     background: #01030D;
-    border-bottom: 1px solid #fff;
     position:fixed;
     color:#fff;
 }
@@ -54,6 +53,14 @@ button:hover{
 @media screen and (max-width:1000px){
     .header-container .header-section{
         width:100%;
+    }
+    .header-container .header-section h3{
+        font-size:1em;
+    }
+    .header-container .header-section button{
+        width:auto;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 /** Form Container 
@@ -179,11 +186,11 @@ table th,td{
 }
 .index-container .index-sub{
     width:45%;
-    border:1px solid #fff;
     height:60vh;
     margin-left:5%;
     padding:40px;
     border-radius:20px;
+    background-color:#01030D;
 }
 
 .index-container .index-sub img{

@@ -7,6 +7,10 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime 
 import calendar
 from .utils import get_plot
+from .serializers import *
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
 months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
@@ -20,6 +24,21 @@ def SignIn(request):
 
 def index(request):
     return render(request, 'index.html')
+
+
+class DashboardAPI(APIView):
+    def get(self, request):
+        current_user = request.user
+        currentMonth = datetime.now().month
+        currentYear = datetime.now().year
+        curr_month = calendar.month_name[currentMonth]
+        payment_objects = Payment.objects.filter(username=current_user)
+        status_objects = Payment.objects.filter(username=current_user, month=curr_month, year=currentYear )
+        house_objects = MyAppUser.objects.filter(user=current_user)
+        user_serialiizer = MyAppUserSerializer(current_user)
+        payment_serializer = PaymentSerializer(payment_objects)
+        current_payment_serializer = PaymentSerializer(status_objects)
+        return  Response(user_serialiizer.data, payment_serializer.data, current_payment_serializer.data)  )
 
 @login_required
 def Dashboard(request):
